@@ -1,0 +1,6 @@
+#!/bin/bash
+# Make sure macOS and Ableton see the fresh plug-in
+xattr -dr com.apple.quarantine "/Library/Audio/Plug-Ins/Components/Sadhana.component" 2>/dev/null || true
+xattr -dr com.apple.quarantine "/Library/Audio/Plug-Ins/VST3/Sadhana.vst3" 2>/dev/null || true
+killall -9 AudioComponentRegistrar 2>/dev/null || true
+exit 0

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>Sadhana · clarinet offering &amp; living drone</title>
+    <welcome file="welcome.html" mime-type="text/html"/>
+    <options customize="never" require-scripts="false" hostArchitectures="arm64,x86_64"/>
+    <domains enable_localSystem="true"/>
+    <choices-outline><line choice="default"/></choices-outline>
+    <choice id="default" title="Sadhana"><pkg-ref id="au.com.samgreengardencare.sadhana"/></choice>
+    <pkg-ref id="au.com.samgreengardencare.sadhana" version="1.0.0">Sadhana-component.pkg</pkg-ref>
+</installer-gui-script>

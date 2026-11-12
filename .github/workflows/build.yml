@@ -1,0 +1,15 @@
+name: Build Mac installer
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  mac:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build universal plug-in and installer
+        run: bash build_mac.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Sadhana-mac
+          path: dist/
