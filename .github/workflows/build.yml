@@ -1,7 +1,10 @@
 name: Build Mac installer
 on:
   push:
+    branches: [main]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   mac:
     runs-on: macos-latest
@@ -13,3 +16,14 @@ jobs:
         with:
           name: Sadhana-mac
           path: dist/
+      - name: Publish installer to the 'installer' branch
+        run: |
+          git config user.name "Sadhana build"
+          git config user.email "build@users.noreply.github.com"
+          mkdir -p /tmp/out && cp -R dist/. /tmp/out/
+          git checkout --orphan installer
+          git rm -rf --quiet .
+          cp -R /tmp/out/. .
+          git add -A
+          git commit -m "Installer from ${GITHUB_SHA::7}"
+          git push -f origin installer
