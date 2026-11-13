@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+86c1e0fd325b26fc78269f8de2b7cde6 Sadhana_artefacts/JuceLibraryCode/Sadhana_AU/PkgInfo
+f7c899f0efa8fad19d4ec4751ed63f3d Sadhana_artefacts/JuceLibraryCode/Sadhana_VST3/PkgInfo
